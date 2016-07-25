@@ -17,6 +17,9 @@ public class Client {
 	 * 适用场景：<br>
 	 * 		几个类的主要逻辑相同，只在部分逻辑的算法和行为上稍有区别的情况<br>
 	 * 		有几种相似的行为，或者说算法，客户端需要动态的决定使用哪一种<br>
+	 * 
+	 * 注意：<br>
+	 * 策略模式一般不会单独使用，跟模版方法，工厂模式等混合使用的情况比较多
 	 * @param args
 	 */
 	public static void main(String[]args){
