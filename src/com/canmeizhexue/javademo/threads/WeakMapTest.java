@@ -16,8 +16,9 @@ public class WeakMapTest {
 		map.put(new MyKey("helloworld"), "12345");
 		//字符串类型的key却不会被回收
 		map.put("wekmap", "map test");
+		map.put(new MyKey("3f3khgf"), "3evfe3");
 		printMap(map);
-		for(int i=0;i<10000;i++){
+		for(int i=0;i<20000;i++){
 			System.gc();
 /*			try {
 				Thread.sleep(2000);
@@ -25,6 +26,10 @@ public class WeakMapTest {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}*/
+			if(map.isEmpty()){
+				System.out.println("map is empty  "+i);	
+				System.exit(-1);
+			}
 			System.out.println("current loop is  "+i);
 			printMap(map);
 		}
