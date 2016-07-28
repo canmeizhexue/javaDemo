@@ -17,8 +17,20 @@ public class WeakMapTest {
 		//字符串类型的key却不会被回收
 		map.put("wekmap", "map test");
 		map.put(new MyKey("3f3khgf"), "3evfe3");
+		/**
+		 * 同样是字符串，可以看见这俩个表现出来的行为是不一样的
+		 * stringa会被回收，stringb对应的项不会从map中删除，尽管将stringb赋值为null
+		 */
+		String stringa = new String("aaaaa");
+		map.put(stringa, "valueaaaaaaaaaaaaaaaaaaaa");
+		stringa=null;
+		
+		String stringb = "bbbbbbbbbbbb";
+		map.put(stringb, "valuebbbbbbbbbbb");
+		stringb=null;
+		
 		printMap(map);
-		for(int i=0;i<20000;i++){
+		for(int i=0;i<20/*000*/;i++){
 			System.gc();
 /*			try {
 				Thread.sleep(2000);
