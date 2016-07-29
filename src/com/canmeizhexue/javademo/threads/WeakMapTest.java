@@ -30,7 +30,7 @@ public class WeakMapTest {
 		stringb=null;
 		
 		printMap(map);
-		for(int i=0;i<20/*000*/;i++){
+		for(int i=0;i<20000;i++){
 			System.gc();
 /*			try {
 				Thread.sleep(2000);
