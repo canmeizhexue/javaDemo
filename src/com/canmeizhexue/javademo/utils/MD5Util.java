@@ -14,26 +14,6 @@ import java.security.NoSuchAlgorithmException;
  */
 public class MD5Util {
 
-
-    /**
-     * 将指定byte数组转换成16进制字符串
-     *
-     * @param b
-     * @return
-     */
-    private static String byteToHexString(byte[] b) {
-        StringBuffer hexString = new StringBuffer();
-        for (int i = 0; i < b.length; i++) {
-            String hex = Integer.toHexString(b[i] & 0xFF);
-            if (hex.length() == 1) {
-                hex = '0' + hex;
-            }
-            hexString.append(hex.toUpperCase());
-        }
-        return hexString.toString();
-    }
-
-
     /**
      *  生成摘要串
      * @param str 内容
@@ -52,7 +32,7 @@ public class MD5Util {
             byte[] digest = md.digest();
 
             //将字节数组格式加密后的口令转化为16进制字符串格式的口令
-            encodeStr = byteToHexString(digest);
+            encodeStr = HexUtils.encodeHexStr(digest);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
@@ -63,8 +43,8 @@ public class MD5Util {
         return encodeStr;
     }
     public static void main(String[]args){
-
-    	String md5 = md5("儿科换个可更换给我喝口hop诶好？1245￥%#%……&&%");
+    	String originalString = "儿科换个可更换给我喝口hop诶好？1245￥%#%……&&%";
+    	String md5 = md5(originalString);
     	System.out.println(md5);
     	String str="6f70a4e314fd2a47f86136c7bf8f5262";
     	System.out.println((str.equalsIgnoreCase(md5)));
