@@ -13,7 +13,7 @@ import com.canmeizhexue.javademo.innerclass.MemberStyle.FirstInner.SecondInner;
  * 内部类访问外部类的私有变量或者私有方法时，会在外部类生成相应的静态访问方法。
  * 不管内部类是否会访问外部类的成员，都会给内部类生成一个以外部类为参数的构造函数
  * 
- * @author zengyaping
+ * @author canmeizhexue
  *
  */
 public class MemberStyle {
