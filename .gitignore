@@ -14,3 +14,7 @@ hs_err_pid*
 *.classpath
 *.project
 bin
+# 忽略IDE的相关配置文件夹
+.idea/
+#忽略IDE输出文件夹
+out/

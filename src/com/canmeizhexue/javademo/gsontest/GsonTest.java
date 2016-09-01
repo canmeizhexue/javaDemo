@@ -14,6 +14,11 @@ import com.google.gson.reflect.TypeToken;
  */
 public class GsonTest {
 	public static void main(String[]args){
+		try{
+			throw new UnsatisfiedLinkError("UnsatisfiedLinkError");
+		}catch(Throwable throwable){
+			System.out.println("catch UnsatisfiedLinkError");
+		}
 		Gson gson = new Gson();
 		//基本数据类型的解析
 
