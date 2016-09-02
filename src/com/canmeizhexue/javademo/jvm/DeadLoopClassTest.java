@@ -1,12 +1,17 @@
 package com.canmeizhexue.javademo.jvm;
 
-/** // »¥³â·ÃÎÊÀàµÄ³õÊ¼»¯²¿·Ö£¬ÀàµÄ³õÊ¼»¯²¿·ÖÖ»»áÖ´ĞĞÒ»´Î¡£
+/** // äº’æ–¥è®¿é—®ç±»çš„åˆå§‹åŒ–éƒ¨åˆ†ï¼Œç±»çš„åˆå§‹åŒ–éƒ¨åˆ†åªä¼šæ‰§è¡Œä¸€æ¬¡ã€‚
  * Created by zengyaping on 2016-9-1.
  */
 public class DeadLoopClassTest {
 
     public static void main(String[] args){
         System.out.println(Thread.currentThread()+" main function");
+        Boolean b1 = Boolean.FALSE;
+        Boolean b2 = false;
+        System.out.println(b1==b2 );
+        System.out.println(b1);
+        System.out.println(b2);
         Runnable script = new Runnable() {
             @Override
             public void run() {
@@ -21,7 +26,7 @@ public class DeadLoopClassTest {
     public static class DeadLoopClass{
         static {
             if(true){
-                // ²»¼ÓÕâ¸öifÓï¾ä£¬±àÒë²»Í¨¹ı
+                // éœ€è¦åŠ ä¸Šifï¼Œå¦åˆ™ç¼–è¯‘ä¸è¿‡
                 System.out.println(Thread.currentThread()+" init DeadLoopClass");
                 while (true){}
             }
