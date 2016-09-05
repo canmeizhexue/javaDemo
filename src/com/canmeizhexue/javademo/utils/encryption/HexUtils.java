@@ -1,4 +1,4 @@
-package com.canmeizhexue.javademo.utils;
+package com.canmeizhexue.javademo.utils.encryption;
 
 /**
  * <p>HexUtils类 1、提供byte[]和十六进制字符串相互转换功能；</p>

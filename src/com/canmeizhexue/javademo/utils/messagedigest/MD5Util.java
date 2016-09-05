@@ -1,5 +1,7 @@
-package com.canmeizhexue.javademo.utils;
+package com.canmeizhexue.javademo.utils.messagedigest;
 
+
+import com.canmeizhexue.javademo.utils.encryption.HexUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -9,6 +11,14 @@ import java.security.NoSuchAlgorithmException;
 /**
  * <p>hash散列算法的一种，或者说摘要算法的一种</p>
  *<p>将字符串的utf-8字节数组进行摘要，然后将得到的字节数组转换成16进制的字符串,md5串中不会大小写混合</p>
+ * <p>MD家族(128位摘要算法)有多个消息摘要算法，如MD2，MD4</p>
+ * 算法           摘要长度        实现方
+ * MD2            128               JDK
+ * MD4            128               Bouncy Castle
+ * MD5            128               JDK
+ *
+ *
+ *
  * @author canmeizhexue<br/>
  * @version 1.0 (16/4/21 下午9:53)<br/>
  */
@@ -45,7 +55,9 @@ public class MD5Util {
     public static void main(String[]args){
     	String originalString = "儿科换个可更换给我喝口hop诶好？1245￥%#%……&&%";
     	String md5 = md5(originalString);
-    	System.out.println(md5);
+        //一个16进制是4个二进制，所以输出的长度是32
+        System.out.println(md5.length());
+        System.out.println(md5);
     	String str="6f70a4e314fd2a47f86136c7bf8f5262";
     	System.out.println((str.equalsIgnoreCase(md5)));
     	

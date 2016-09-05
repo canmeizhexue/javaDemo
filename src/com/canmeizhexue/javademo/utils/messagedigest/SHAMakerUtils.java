@@ -1,4 +1,6 @@
-package com.canmeizhexue.javademo.utils;
+package com.canmeizhexue.javademo.utils.messagedigest;
+
+import com.canmeizhexue.javademo.utils.encryption.HexUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -7,6 +9,12 @@ import java.security.NoSuchAlgorithmException;
 
 /**散列算法一般都是   字符串---->散列得到的字节数组---->字节数组的字符串形式
  * SHAR摘要
+ * 算法           摘要长度            实现方
+ * SHA-1              160               JDK
+ * SHA-224            224               Bouncy Castle
+ * SHA-256            256               JDK
+ * SHA-384            384               JDK
+ * SHA-512            512               JDK
  */
 
 public final class SHAMakerUtils {

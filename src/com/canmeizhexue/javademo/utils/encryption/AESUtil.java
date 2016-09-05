@@ -1,4 +1,7 @@
-package com.canmeizhexue.javademo.utils;
+package com.canmeizhexue.javademo.utils.encryption;
+
+import com.canmeizhexue.javademo.utils.Base64;
+import com.canmeizhexue.javademo.utils.messagedigest.SHAMakerUtils;
 
 import java.io.UnsupportedEncodingException;
 
