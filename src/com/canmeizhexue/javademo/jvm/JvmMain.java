@@ -52,6 +52,8 @@ public class JvmMain {
 
 		//******  只进行声明是不会加载的，
 //		SubClass subModel = null;
-		SubClass[] array = new SubClass[4];
+//		SubClass[] array = new SubClass[4];
+
+		SubClass subClass = new SubClass();
 	}
 }
